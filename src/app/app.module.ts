@@ -3,32 +3,28 @@ import { NgModule } from '@angular/core';
 import { UIRouterModule, UIView } from '@uirouter/angular';
 
 import { AppComponent } from './app.component';
-import {WelcomeComponent} from "./welcome.component";
-
-import {aboutState, APP_STATES, helloState} from "./app.states";
-import {FolderListComponent} from "./mymessages/folder-list.component";
-import {MessageListComponent} from "./mymessages/message-list.component";
-import {MessageComponent} from "./mymessages/message.component";
-
-import {HelloComponent} from "./Test/hello.component";
-import {AboutComponent} from "./Test/about.component";
-import {folderListState, messageListState, messageState} from "./mymessages/mymessages.state";
-
+import {AppState} from "./app.states";
+import {MessageListUIState} from "./components/messagelist/messagelist.state";
+import {MessageState} from "./components/message/message.state";
+import {FolderListState} from "./components/folderlist/folderlist.state";
+import {FolderlistComponent} from "./components/folderlist/folderlist.component";
+import {MessagelistComponent} from "./components/messagelist/messagelist.component";
+import {MessageComponent} from "./components/message/message.component";
+import {StartState} from "./components/start/start.state";
+import {StartComponent} from "./components/start/start.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    FolderListComponent,
-    MessageListComponent,
+    FolderlistComponent,
+    MessagelistComponent,
     MessageComponent,
-    AboutComponent,
-    HelloComponent
+    StartComponent
   ],
   imports: [
     //UIRouterModule.forRoot({mymessagesstate}),
     BrowserModule,
-    UIRouterModule.forRoot({states: [ helloState, aboutState, messageState, messageListState, folderListState ], useHash: true})
+    UIRouterModule.forRoot({states: [ AppState, MessageListUIState, MessageState, FolderListState, StartState], useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]

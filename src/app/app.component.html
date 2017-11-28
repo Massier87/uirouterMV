@@ -1,29 +1,58 @@
 <h1>APP COMPNENT PAGE</h1>
-<!--<FolderListComponent></FolderListComponent>-->
 
-<a uiSref="hello" uiSrefActive="active">Hello</a>
-<a uiSref="about" uiSrefActive="active">About</a>
+<!--<div class="container">
+  <ui-view name="start"></ui-view>
+</div>-->
 
-<div class="test-boarder">
-  <ui-view name="folderlist"></ui-view>
-  <!--<folderlist></folderlist>-->
+<div class="container">
+
+  <ui-view name="start"></ui-view>
+
+  <div class="section container-fluid">
+    <div class="row borders" style="height: 700px">
+
+      <div class="col-md-4" style="height: 100%; background-color: brown">
+        <ui-view name="folderlist"></ui-view>
+      </div>
+
+      <div class="col-md-8">
+        <div class="row borders" style="height: 700px">
+        <div class="row" style="height: 40%; background-color: #0275d8">
+          <p>This is the message list area</p>
+          <br>
+          <ui-view name="messagelistui"></ui-view>
+        </div>
+        <div class="row" style="height: 60%; background-color: chartreuse">
+          <p>This is the message detail area</p>
+          <br>
+          <ui-view name="messageui"></ui-view>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<ui-view></ui-view>
-
-
-<!--
-mymessages.component.ts
-<div class="my-messages">
-
-  &lt;!&ndash; Show message folders &ndash;&gt;
-  <app-folder-list [folders]="folders"></app-folder-list>
-
-  &lt;!&ndash; A named view for the list of messages in this folder.  This will be  filled in by the 'mymessages.messagelist' child state &ndash;&gt;
-  <ui-view name="messagelist" class="messagelist"></ui-view>
-
-</div>
-
-&lt;!&ndash; A named ui-view for a message's contents.  The 'mymessages.messagelist.message' grandchild state plugs into this ui-view &ndash;&gt;
-<ui-view name="messagecontent"></ui-view>
--->
+<!--<div class="container">
+  <div class="section container-fluid">
+    <div class="row borders" style="height: 700px">
+      <div class="col-md-4" style="height: 100%; background-color: brown">
+        <p>This is the folder list area</p>
+        <ui-view name="folderlist"></ui-view>
+        &lt;!&ndash;<a uiSref="folderlist" uiSrefActive="active">Folder List</a>&ndash;&gt;
+      </div>
+      <div class="col-md-8">
+        <div class="row" style="height: 40%; background-color: #0275d8">
+          <p>This is the message list area</p>
+          <br>
+          <ui-view name="messagelistui"></ui-view>
+        </div>
+        <div class="row" style="height: 60%; background-color: chartreuse">
+          <p>This is the message detail area</p>
+          <br>
+          <ui-view name="messageui"></ui-view>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
